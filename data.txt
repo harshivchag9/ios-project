@@ -1,0 +1,41 @@
+* alert
+UIAlertController , alert.addAction( UIAlertAction(handler: {ACTION in }) ) 
+alert.addTextField()
+self.present()
+
+*tableView
+drag tableview, change property name , inherit delegate & source
+drag in yellow button, 
+-1 return list.count
+-2 cell = UITableViewCell.init , cell.textLabel.text = list[indexPath.row] , return 
+
+*custom
+- cell = cv.dequeueReusableCell(identifier,Indexpath) as! CollectionClass , return 
+
+*audio
+import AVKit,AVFoundation
+URL/ Bundle.main.path , AVAudioPlayer(path)
+func{ iplayer?.play() or iplayer?.pause() or iplayer?.play() }
+
+*video
+AVPlayer(url:), AVPlayerViewController, playerview.player = AVPlayer
+present(playerview,t,n)
+
+*webview - URL, webview.loadRequest(URLRequest(url))
+
+*api
+URL, task = URLSession.shared.dataTask(url, { })
+JSONSerialization.jsonObject(data,.mutableContainers) as! []
+task.resume()
+
+--post
+irequest = NSMutableURLRequest() , ir.httpMethod = POST , ir.httpBody = str.data(.utf8)
+dataTask(with: ir as URLRequest)
+
+*image - data = try! Data(url) , UIImage(named/data:)
+
+*sqllite
+- dpointer:OpaquePointer?
+- FileManager.default.url(.documentDirectory,.userDomainMask).appendingPathComponent(file.sqlite)
+- sqlite3_open(file.path, &dpointer)
+- sqlite3_exec(dpointer, inq, nil, nil, nil)  == SQLITE_OK
